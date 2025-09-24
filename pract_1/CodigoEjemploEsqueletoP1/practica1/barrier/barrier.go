@@ -140,7 +140,6 @@ func main() {
 			fmt.Println("All processes reached the barrier")
 			quitChannel <- true
 			listener.Close()
-			os.Exit(1)
 		}
 	} else {
 		fmt.Println("Error getting endpoints:", err)
