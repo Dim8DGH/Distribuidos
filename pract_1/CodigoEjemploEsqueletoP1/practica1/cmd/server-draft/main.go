@@ -12,8 +12,8 @@ package main
 import (
 	"encoding/gob"
 	"log"
-	"os"
 	"net"
+	"os"
 	"practica1/com"
 )
 
@@ -40,17 +40,26 @@ func findPrimes(interval com.TPInterval) (primes []int) {
 	return primes
 }
 
-func processRequest(conn net.Conn){
+func processRequest(conn net.Conn) {
+	defer conn.Close()
 	var request com.Request
 	decoder := gob.NewDecoder(conn)
 	err := decoder.Decode(&request)
-	com.CheckError(err)
+	if err != nil {
+		log.Println("Error decoding request:", err)
+		return
+	}
+	log.Printf("Recibida petición: %+v\n", request)
 	primes := findPrimes(request.Interval)
 	reply := com.Reply{Id: request.Id, Primes: primes}
 	encoder := gob.NewEncoder(conn)
-	encoder.Encode(&reply)
+	err = encoder.Encode(&reply)
+	if err != nil {
+		log.Println("Error encoding reply:", err)
+		return
+	}
+	log.Printf("Respuesta enviada para petición %d: %v\n", request.Id, reply.Primes)
 }
-
 func main() {
 	args := os.Args
 	if len(args) != 2 {
@@ -63,12 +72,10 @@ func main() {
 
 	log.SetFlags(log.Lshortfile | log.Lmicroseconds)
 
-	
 	log.Println("***** Listening for new connection in endpoint ", endpoint)
 	for {
 		conn, err := listener.Accept()
-		defer conn.Close()
 		com.CheckError(err)
-		processRequest(conn)
+		go processRequest(conn)
 	}
 }
