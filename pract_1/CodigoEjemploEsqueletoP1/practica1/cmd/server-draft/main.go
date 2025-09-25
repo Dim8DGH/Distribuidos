@@ -1,11 +1,11 @@
 /*
 * AUTOR: Rafael Tolosana Calasanz y Unai Arronategui
 * ASIGNATURA: 30221 Sistemas Distribuidos del Grado en Ingeniería Informática
-*			Escuela de Ingeniería y Arquitectura - Universidad de Zaragoza
+* Escuela de Ingeniería y Arquitectura - Universidad de Zaragoza
 * FECHA: septiembre de 2022
 * FICHERO: server-draft.go
 * DESCRIPCIÓN: contiene la funcionalidad esencial para realizar los servidores
-*				correspondientes a la práctica 1
+* correspondientes a la práctica 1
  */
 package main
 
@@ -40,42 +40,68 @@ func findPrimes(interval com.TPInterval) (primes []int) {
 	return primes
 }
 
-func processRequest(conn net.Conn) {
-	defer conn.Close()
-	var request com.Request
-	decoder := gob.NewDecoder(conn)
-	err := decoder.Decode(&request)
-	if err != nil {
-		log.Println("Error decoding request:", err)
-		return
+// Goroutine para atender las peticiones
+func goRut(entradaChannel <-chan net.Conn) {
+	for {
+		var request com.Request
+		var reply com.Reply
+		// Esperamos que el cliente meta una conexión en la tubería
+		conn := <-entradaChannel
+
+		// Recibimos la request del cliente
+		decoder := gob.NewDecoder(conn)
+		err := decoder.Decode(&request)
+		if err != nil {
+			log.Println("Error al decodificar la petición:", err)
+			conn.Close()
+			continue
+		}
+
+		log.Printf("Petición recibida: %v\n", request)
+
+		primes := findPrimes(request.Interval)
+		reply = com.Reply{Id: request.Id, Primes: primes}
+
+		// Enviamos la respuesta al cliente
+		encoder := gob.NewEncoder(conn)
+		err = encoder.Encode(&reply)
+		if err != nil {
+			log.Println("Error al enviar la respuesta:", err)
+		}
+
+		log.Printf("Respuesta enviada para petición %d: %v\n", request.Id, reply.Primes)
+
+		//  cerramos la conexión
+		conn.Close()
 	}
-	log.Printf("Recibida petición: %+v\n", request)
-	primes := findPrimes(request.Interval)
-	reply := com.Reply{Id: request.Id, Primes: primes}
-	encoder := gob.NewEncoder(conn)
-	err = encoder.Encode(&reply)
-	if err != nil {
-		log.Println("Error encoding reply:", err)
-		return
-	}
-	log.Printf("Respuesta enviada para petición %d: %v\n", request.Id, reply.Primes)
 }
+
 func main() {
+	entradaChannel := make(chan net.Conn)
+
 	args := os.Args
 	if len(args) != 2 {
 		log.Println("Error: endpoint missing: go run server.go ip:port")
 		os.Exit(1)
 	}
+
 	endpoint := args[1]
 	listener, err := net.Listen("tcp", endpoint)
 	com.CheckError(err)
 
 	log.SetFlags(log.Lshortfile | log.Lmicroseconds)
-
 	log.Println("***** Listening for new connection in endpoint ", endpoint)
+
+	// Creamos varias Goroutines para atender las peticiones concurrentemente
+	for i := 0; i < 4; i++ {
+		go goRut(entradaChannel)
+	}
+
 	for {
 		conn, err := listener.Accept()
 		com.CheckError(err)
-		go processRequest(conn)
+
+		// Metemos la conexión en la tubería para que una de las Goroutines la atienda
+		entradaChannel <- conn
 	}
 }
