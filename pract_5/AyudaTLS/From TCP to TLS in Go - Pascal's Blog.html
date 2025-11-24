@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.58.1">
+
+<link rel="apple-touch-icon" href="https://pascal.bach.ch/images/logo.png">
+
+
+
+
+    <link rel="canonical" href="https://pascal.bach.ch/2015/12/17/from-tcp-to-tls-in-go/">
+    
+    <link href="From%20TCP%20to%20TLS%20in%20Go%20-%20Pascal's%20Blog_files/css.css" rel="stylesheet">
+    
+    <link href="From%20TCP%20to%20TLS%20in%20Go%20-%20Pascal's%20Blog_files/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="From%20TCP%20to%20TLS%20in%20Go%20-%20Pascal's%20Blog_files/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <title>From TCP to TLS in Go - Pascal's Blog</title>
+    
+<meta name="description" content="Start plain In this post we will have a look at a simple TCP example in Go and how it can be changed to use secure TLS instead.
+Plain TCP server First let’s have a look at a simple TCP server. It listens on port 8088 and prints everything it receives to stdout.
+package main import ( &quot;fmt&quot; &quot;io&quot; &quot;log&quot; &quot;net&quot; &quot;os&quot; ) func main() { l, err := net.">
+
+<meta property="og:title" content="From TCP to TLS in Go - Pascal's Blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pascal.bach.ch/2015/12/17/from-tcp-to-tls-in-go/">
+<meta property="og:image" content="https://pascal.bach.ch/images/default.png">
+<meta property="og:site_name" content="Pascal's Blog">
+<meta property="og:description" content="Start plain In this post we will have a look at a simple TCP example in Go and how it can be changed to use secure TLS instead.
+Plain TCP server First let’s have a look at a simple TCP server. It listens on port 8088 and prints everything it receives to stdout.
+package main import ( &quot;fmt&quot; &quot;io&quot; &quot;log&quot; &quot;net&quot; &quot;os&quot; ) func main() { l, err := net.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Pascal's Blog">
+<meta name="twitter:url" content="https://pascal.bach.ch/2015/12/17/from-tcp-to-tls-in-go/">
+<meta name="twitter:title" content="From TCP to TLS in Go - Pascal's Blog">
+<meta name="twitter:description" content="Start plain In this post we will have a look at a simple TCP example in Go and how it can be changed to use secure TLS instead.
+Plain TCP server First let’s have a look at a simple TCP server. It listens on port 8088 and prints everything it receives to stdout.
+package main import ( &quot;fmt&quot; &quot;io&quot; &quot;log&quot; &quot;net&quot; &quot;os&quot; ) func main() { l, err := net.">
+<meta name="twitter:image" content="https://pascal.bach.ch/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/pascal.bach.ch\/"
+    },
+    "headline": "From TCP to TLS in Go-Pascal's Blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/pascal.bach.ch\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-12-17T23:38:52JST",
+    "dateModified": "2015-12-17T23:38:52JST",
+    "author": {
+      "@type": "Person",
+      "name": "Pascal's Blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pascal's Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/pascal.bach.ch\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "Start plain In this post we will have a look at a simple TCP example in Go and how it can be changed to use secure TLS instead.\nPlain TCP server First let\x26rsquo;s have a look at a simple TCP server. It listens on port 8088 and prints everything it receives to stdout.\npackage main import ( \x26quot;fmt\x26quot; \x26quot;io\x26quot; \x26quot;log\x26quot; \x26quot;net\x26quot; \x26quot;os\x26quot; ) func main() { l, err := net."
+  }
+</script>
+
+
+    <style>
+html {
+  font-size: 18px;
+  background-color: rgba(236,239,241,.5);
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+body {
+  color: #333;
+  font-family: 'Roboto Slab','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif;
+  font-feature-settings : "palt";
+  font-size: inherit;
+  line-height: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 ,h6 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1rem;
+  margin: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dashed #cfd8dc;
+  margin: 1rem 0;
+}
+
+p {
+  margin: 0;
+  line-height: 1rem;
+}
+
+a {
+  color: #2196f3;
+  text-decoration: none;
+  transition-duration: .3s;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  font-size: .8rem;
+  padding: .5rem;
+}
+
+tr {
+  border-bottom: 1px dashed #ddd;
+}
+
+/* Layouts */
+main,
+aside {
+  display: block;
+}
+
+main { padding: 1rem 0 3rem 0; }
+aside.h { padding: 3rem 0; }
+
+main.f,
+aside.f {
+  background-color: #333;
+  border-top: 2px dashed #fff;
+  border-bottom: 2px dashed #fff;
+}
+
+.l-container {
+  position: relative;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.l-container.thin {
+  max-width: 44rem;
+}
+
+.l-header {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.l-header .description {
+  margin-top: .5rem;
+  font-size: .8rem;
+}
+
+.l-footer {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05);
+  font-size: .6rem;
+  font-weight: 700;
+  padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .l-sidebar {
+    margin-top: 4rem;
+  }
+}
+
+.mrow {
+  margin: 0 -1rem;
+  overflow: hidden;
+}
+
+.mcol {
+  box-sizing: border-box;
+  float: left;
+  padding: 0 1rem;
+}
+
+.c6 { width: 50%; }
+.c4 { width: 33.26323833%; }
+.c8 { width: 66.66666%; }
+
+@media (max-width: 768px) {
+  .mcol {
+    width: 100%;
+    float: none;
+  }
+}
+
+.logo a {
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.articles {
+  margin: -1rem 0;
+  margin-bottom: 1rem;
+}
+
+.articles.sm {
+  margin: -.5rem 0;
+  margin-bottom: 0;
+}
+
+article {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+article.li {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05);
+  height: 20rem;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+article.li > a {
+  display: block;
+  color: #333;
+}
+
+article.li .inner {
+  padding: 1rem;
+}
+
+article.li .thumb {
+  height: 8rem;
+}
+
+article.li .title {
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+article.li .summary {
+  font-size: .8rem;
+  height: 6rem;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+article.li .summary::after {
+  content: '...';
+}
+
+article.lism {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05);
+  margin: .5rem 0;
+}
+
+article.lism::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+article.lism > a {
+  display: block;
+  color: #333;
+}
+
+article.lism .inner {
+  display: table-cell;
+  vertical-align: middle;
+  height: 5rem;
+  padding: 0 .75rem;
+}
+
+article.lism .thumb {
+  width: 5rem;
+  height: 5rem;
+  float: left;
+}
+
+article.lism .title {
+  font-weight: 700;
+  font-size: .8rem;
+  margin-bottom: .25rem;
+}
+
+article.sn {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05);
+  margin-bottom: 1rem;
+}
+
+article.sn .thumb {
+  height: 20rem;
+}
+
+@media (max-width: 768px) {
+  article.sn .thumb {
+    height: 10rem;
+  }
+}
+
+article.sn > .article-header,
+article.sn > .article-body,
+article.sn .article-footer {
+  padding: 2rem;
+}
+
+article.sn > .article-body {
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  article.sn > .article-header,
+  article.sn > .article-body,
+  article.sn .article-footer {
+    padding: 1rem;
+  }
+
+  article.sn > .article-body {
+    padding: 0 1rem;
+  }
+}
+
+article.sn > .article-header .title {
+  font-size: 1.8rem;
+  line-height: 2rem;
+  margin-bottom: .5rem;
+}
+
+@media (max-width: 768px) {
+  article.sn > .article-header .title {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+  }
+}
+
+article.sn > .article-header .facts {
+  margin-bottom: 1rem;
+}
+
+article.sn > .article-body {
+  margin-bottom: 1.5rem;
+}
+
+article.sn > .article-body h2 {
+  border-bottom: .25rem solid #333;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin: 1.5rem 0;
+  padding: .5rem 0;
+}
+
+article.sn > .article-body h3 {
+  border-left: .5rem solid #333;
+  line-height: 1.5rem;
+  margin: 1.5rem 0;
+  padding: .125rem .5rem;
+}
+
+article.sn > .article-body ul,
+article.sn > .article-body ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+article.sn > .article-body li {
+  padding-bottom: .5rem;
+  line-height: 1.5rem;
+}
+
+article.sn > .article-body li:last-child {
+  padding-bottom: 0;
+}
+article.sn > .article-body p {
+  margin: 1rem 0;
+  line-height: 1.5rem;
+}
+
+article.sn > .article-body strong,
+article.sn > .article-body em {
+  font-style: normal;
+  font-weight: 700;
+}
+
+article.sn > .article-body strong {
+  box-shadow: 0 -.5rem 0 0 #ffc107 inset;
+}
+
+article.sn > .article-body em {
+  color: #8bc34a;
+}
+
+article.sn > .article-body code,
+article.sn > .article-body pre {
+  font-family: Menlo, Consolas, monospace;
+  font-size: .7rem;
+}
+
+article.sn > .article-body pre {
+  background-color: #333;
+  color: #fff;
+  line-height: 1rem;
+  margin: 1.5rem -2rem;
+  overflow: auto;
+}
+
+@media (max-width: 768px) {
+  article.sn > .article-body pre {
+    margin: 1.5rem -1rem;
+  }
+}
+
+article.sn > .article-body pre > code {
+  display: block;
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+  article.sn > .article-body pre > code {
+    padding: 1rem;
+  }
+}
+
+article.sn > .article-body p code {
+  background-color: #eceff1;
+  color: #333;
+  border-radius: 4px;
+  margin: 0 .25rem;
+  padding: .375rem;
+  white-space: nowrap;
+}
+
+article.sn > .article-body blockquote {
+  position: relative;
+  border-left: .25rem solid #333;
+  font-size: .8rem;
+  padding: .125rem 1rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  article.sn > .article-body blockquote {
+    font-size: 1rem;
+  }
+}
+
+article.sn > .article-body blockquote p {
+  margin: .5rem 0;
+  line-height: 1rem;
+}
+
+article.sn > .article-body figure {
+  margin: 1.5rem 0;
+}
+
+article.sn > .article-body img,
+article.sn > .article-body figure img,
+article.sn > .article-body figure amp-img {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  max-width: 100%;
+}
+
+article.sn > .article-body figcaption {
+  color: #cfd8dc;
+  font-size: .8rem;
+  font-weight: 700;
+  margin-top: .5rem;
+}
+
+.facts li {
+  display: inline;
+  font-size: .8rem;
+  margin-right: 1rem;
+}
+
+.facts i {
+  color: #cfd8dc;
+  margin-right: .5em;
+}
+
+.facts.sm li {
+  font-size: .7rem;
+}
+
+.sections.sidebar {
+  margin: -1rem 0;
+}
+
+.sections.footer {
+  margin: -1rem 0;
+}
+
+section.sidebar {
+  margin: 2rem 0;
+}
+
+section.sidebar > header {
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+section.footer {
+  margin: 1rem 0;
+}
+
+section.footer > header {
+  font-size: .8rem;
+  margin: .5rem 0;
+}
+
+section.footer > header::before {
+  content: "- ";
+}
+
+section.footer > header a {
+  font-weight: 700;
+  color: #333;
+  text-decoration: underline;
+}
+
+.terms {
+  margin: -.25rem;
+}
+
+.terms li {
+  display: inline-block;
+}
+
+.terms a {
+  display: block;
+  float: left;
+  background-color: #333;
+  border-radius: 4px;
+  color: #fff;
+  font-size: .7rem;
+  margin: .25rem;
+  padding: 0 .75rem;
+  line-height: 1.75rem;
+}
+
+.paging {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.paging a {
+  display: inline-block;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05);
+  border-radius: 4px;
+  color: #333;
+  padding: 0 1rem;
+  line-height: 3rem;
+}
+
+.page-title {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.page-title::after {
+  content: '';
+  display: block;
+  border-bottom: .25rem solid #333;
+  width: 3rem;
+  margin: 1.5rem auto;
+}
+
+.page-title > .title {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+/* Parts:breadcrumb */
+.crumb ol {
+  text-overflow: ellipsis;
+  color: #cfd8dc;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.crumb li {
+  display: inline;
+  font-size: .8rem;
+}
+
+.crumb li::after {
+  content: '›';
+  margin: 0 .25rem 0 .5rem;
+}
+
+.crumb li:last-child::after {
+  content: '';
+}
+
+.crumb a {
+  color: #cfd8dc;
+}
+
+.crumb i {
+  margin-right: .5em;
+}
+
+.share {
+  padding: 0;
+}
+
+.share a {
+  display: inline-block;
+  box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05);
+  min-width: 1rem;
+  height: 2rem;
+  border-radius: 4px;
+  color: #333;
+  font-size: .8rem;
+  font-weight: 700;
+  line-height: 2rem;
+  text-align: center;
+  padding: 0 .5rem;
+}
+
+.adj article.lism {
+  margin-bottom: 1rem;
+}
+
+.adj header {
+  font-weight: 700;
+  font-size: .8rem;
+}
+
+.toc {
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .toc {
+    padding: 0 1rem;
+  }
+}
+
+.toc {
+  margin: 1rem 0;
+}
+
+.toc nav>ul {
+  background-color: #eceff1;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: .8rem;
+  padding: .5rem 1rem;
+  word-break: break-all;
+  list-style: none;
+}
+
+.toc ul {
+  padding: 0;
+}
+
+.toc ul ul {
+  padding-left: 1rem;
+}
+
+.toc ul ul ul {
+  padding-left: 1rem;
+}
+
+.toc li {
+  color: #90a4ae;
+}
+
+.toc ul ul>li {
+  font-weight: 700;
+  margin: .5rem 0;
+  list-style-type: decimal;
+}
+
+.toc ul ul ul>li {
+  list-style-type: disc;
+  font-weight: 500;
+}
+
+.author {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05);
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.author .author-thumb {
+  margin: 0 auto 1rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #eceff1;
+  background-size: cover;
+  background-position: center;
+}
+
+.author .author-name {
+  margin-bottom: .5rem;
+  font-weight: 700;
+}
+
+.author .author-facts {
+  margin-bottom: 1rem;
+}
+
+.author .author-facts li {
+  display: inline;
+}
+
+.author .author-facts li a {
+  display: inline-block;
+  background-color: #eceff1;
+  width: 1.75rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  text-align: center;
+  color: #333;
+  font-size: .8rem;
+  border-radius: 2px;
+}
+
+.author .author-facts li a:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+.author .author-description {
+  text-align: left;
+  font-size: .8rem;
+}
+
+.author .author-description p {
+  margin: .5rem 0;
+}
+
+.thumb {
+  background-image: url(https://pascal.bach.ch/images/default.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+  </head>
+  <body>
+    <header class="l-header">
+      <div class="l-container">
+        <div class="logo">
+          <a href="https://pascal.bach.ch/">Pascal's Blog</a>
+        </div>
+        
+
+      </div>
+    </header>
+
+    <main>
+      <div class="l-container">
+        
+<div class="mrow">
+  <div class="mcol c8">
+
+    <article class="sn">
+
+  <div class="thumb thumb-7d129a0a7772acbb6f3d15a8fdfa407c"></div>
+
+  <header class="article-header">
+    <h1 class="title">From TCP to TLS in Go</h1>
+
+    <ul class="facts">
+      <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="2015-12-17T23:38:52JST">Dec 17, 2015</time></li>
+      
+      <li><i class="fas fa-bookmark" aria-hidden="true"></i><a href="https://pascal.bach.ch/post/">POST</a></li>
+      
+    </ul>
+
+    <aside class="share">
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3a%2f%2fpascal.bach.ch%2f2015%2f12%2f17%2ffrom-tcp-to-tls-in-go%2f&amp;title=From%20TCP%20to%20TLS%20in%20Go" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fpascal.bach.ch%2f2015%2f12%2f17%2ffrom-tcp-to-tls-in-go%2f&amp;text=From%20TCP%20to%20TLS%20in%20Go&amp;tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fpascal.bach.ch%2f2015%2f12%2f17%2ffrom-tcp-to-tls-in-go%2f&amp;t=From%20TCP%20to%20TLS%20in%20Go" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fpascal.bach.ch%2f2015%2f12%2f17%2ffrom-tcp-to-tls-in-go%2f&amp;title=From%20TCP%20to%20TLS%20in%20Go" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fpascal.bach.ch%2f2015%2f12%2f17%2ffrom-tcp-to-tls-in-go%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+</aside>
+
+  </header>
+
+  
+
+  <div class="article-body">
+
+<h2 id="start-plain">Start plain</h2>
+
+<p>In this post we will have a look at a simple TCP example in Go and how it can be changed to use secure TLS instead.</p>
+
+<h3 id="plain-tcp-server">Plain TCP server</h3>
+
+<p>First let’s have a look at a simple TCP server. It listens on port 8088 and prints everything it receives to stdout.</p>
+
+<pre><code class="language-go">package main
+
+import (
+	"fmt"
+	"io"
+	"log"
+	"net"
+	"os"
+)
+
+func main() {
+	l, err := net.Listen("tcp", ":8088")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer l.Close()
+
+	for {
+		conn, err := l.Accept()
+		if err != nil {
+			log.Fatal(err)
+		}
+		go func(c net.Conn) {
+			io.Copy(os.Stdout, c)
+			fmt.Println()
+			c.Close()
+		}(conn)
+	}
+}
+</code></pre>
+
+<h3 id="plain-tcp-client">Plain TCP client</h3>
+
+<p>Next we have a client that will send a message to the above server.</p>
+
+<pre><code class="language-go">package main
+
+import (
+	"io"
+	"log"
+	"net"
+)
+
+func main() {
+	conn, err := net.Dial("tcp", "localhost:8088")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	io.WriteString(conn, "Hello Server")
+	conn.Close()
+}
+</code></pre>
+
+<p>If you start the server and then execute the client you should see a «Hello Server» message printed by the server.</p>
+
+<p>Until now everything is written in clear text over the wire so let’s see if we can make it more secure by using TLS.</p>
+
+<h2 id="going-tls">Going TLS</h2>
+
+<p>The TLS certificates in the code are created using the following OpenSSL commands:</p>
+
+<pre><code class="language-sh hljs bash">openssl ecparam -genkey -name prime256v1 -out server.key
+openssl req -new -x509 -key server.key -out server.pem -days 3650
+</code></pre>
+
+<p>We start by adding TLS support to our server and client manually and 
+then improve the code by using the shortcuts provided by the Go standard
+ library.</p>
+
+<h3 id="tls-server-v1">TLS server v1</h3>
+
+<pre><code class="language-go">package main
+
+import (
+	"crypto/tls"
+	"fmt"
+	"io"
+	"log"
+	"net"
+	"os"
+)
+
+const serverKey = `-----BEGIN EC PARAMETERS-----
+BggqhkjOPQMBBw==
+-----END EC PARAMETERS-----
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEIHg+g2unjA5BkDtXSN9ShN7kbPlbCcqcYdDu+QeV8XWuoAoGCCqGSM49
+AwEHoUQDQgAEcZpodWh3SEs5Hh3rrEiu1LZOYSaNIWO34MgRxvqwz1FMpLxNlx0G
+cSqrxhPubawptX5MSr02ft32kfOlYbaF5Q==
+-----END EC PRIVATE KEY-----
+`
+
+const serverCert = `-----BEGIN CERTIFICATE-----
+MIIB+TCCAZ+gAwIBAgIJAL05LKXo6PrrMAoGCCqGSM49BAMCMFkxCzAJBgNVBAYT
+AkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRn
+aXRzIFB0eSBMdGQxEjAQBgNVBAMMCWxvY2FsaG9zdDAeFw0xNTEyMDgxNDAxMTNa
+Fw0yNTEyMDUxNDAxMTNaMFkxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0
+YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxEjAQBgNVBAMM
+CWxvY2FsaG9zdDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHGaaHVod0hLOR4d
+66xIrtS2TmEmjSFjt+DIEcb6sM9RTKS8TZcdBnEqq8YT7m2sKbV+TEq9Nn7d9pHz
+pWG2heWjUDBOMB0GA1UdDgQWBBR0fqrecDJ44D/fiYJiOeBzfoqEijAfBgNVHSME
+GDAWgBR0fqrecDJ44D/fiYJiOeBzfoqEijAMBgNVHRMEBTADAQH/MAoGCCqGSM49
+BAMCA0gAMEUCIEKzVMF3JqjQjuM2rX7Rx8hancI5KJhwfeKu1xbyR7XaAiEA2UT7
+1xOP035EcraRmWPe7tO0LpXgMxlh2VItpc2uc2w=
+-----END CERTIFICATE-----
+`
+
+func main() {
+	cer, err := tls.X509KeyPair([]byte(serverCert), []byte(serverKey))
+	if err != nil {
+		log.Fatal(err)
+	}
+	config := &amp;tls.Config{Certificates: []tls.Certificate{cer}}
+
+	l, err := net.Listen("tcp", ":8089")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer l.Close()
+
+	for {
+		connp, err := l.Accept()
+		if err != nil {
+			log.Fatal(err)
+		}
+		conn := tls.Server(connp, config)
+		go func(c net.Conn) {
+			io.Copy(os.Stdout, c)
+			fmt.Println()
+			c.Close()
+		}(conn)
+	}
+}
+</code></pre>
+
+<p>To enable TLS in the server we need to setup the configuration to do, this add the private key <code>serverKey</code> and the server certificate <code>serverCert</code> and pass it as certificates to <code>tls.Config</code>.</p>
+
+<p>After this we start a normal server like before and enter our loop 
+that is accepting new connections. However after a connection is 
+accepted we wrap the connection <code>connp</code> with a <code>tls.Server</code>. This effectively makes the connection a TLS connection. After this the connection <code>conn</code> can be used as before.</p>
+
+<p>Now that we have our Server TLS enabled we need to do the same for our client to make it able to talk to the server.</p>
+
+<h3 id="tls-client-v1">TLS client v1</h3>
+
+<pre><code class="language-go">package main
+
+import (
+	"crypto/tls"
+	"crypto/x509"
+	"io"
+	"log"
+	"net"
+)
+
+const rootCert = `-----BEGIN CERTIFICATE-----
+MIIB+TCCAZ+gAwIBAgIJAL05LKXo6PrrMAoGCCqGSM49BAMCMFkxCzAJBgNVBAYT
+AkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRn
+aXRzIFB0eSBMdGQxEjAQBgNVBAMMCWxvY2FsaG9zdDAeFw0xNTEyMDgxNDAxMTNa
+Fw0yNTEyMDUxNDAxMTNaMFkxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0
+YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxEjAQBgNVBAMM
+CWxvY2FsaG9zdDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHGaaHVod0hLOR4d
+66xIrtS2TmEmjSFjt+DIEcb6sM9RTKS8TZcdBnEqq8YT7m2sKbV+TEq9Nn7d9pHz
+pWG2heWjUDBOMB0GA1UdDgQWBBR0fqrecDJ44D/fiYJiOeBzfoqEijAfBgNVHSME
+GDAWgBR0fqrecDJ44D/fiYJiOeBzfoqEijAMBgNVHRMEBTADAQH/MAoGCCqGSM49
+BAMCA0gAMEUCIEKzVMF3JqjQjuM2rX7Rx8hancI5KJhwfeKu1xbyR7XaAiEA2UT7
+1xOP035EcraRmWPe7tO0LpXgMxlh2VItpc2uc2w=
+-----END CERTIFICATE-----
+`
+
+func main() {
+	roots := x509.NewCertPool()
+	ok := roots.AppendCertsFromPEM([]byte(rootCert))
+	if !ok {
+		log.Fatal("failed to parse root certificate")
+	}
+	config := &amp;tls.Config{RootCAs: roots, ServerName: "localhost"}
+	
+	connp, err := net.Dial("tcp", "localhost:8089")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	conn := tls.Client(connp, config)
+	io.WriteString(conn, "Hello secure Server")
+	conn.Close()
+}
+</code></pre>
+
+<p>Again we need to add a root certificate <code>rootCert</code> the client uses to verify the server certificate and pass this to <code>tls.Config</code>.
+After this we connect to the server as before but before reading or writing any date we wrap the connection in a <code>tls.Client</code> which converts it to a TLS connection. Please note that we need to pass the server name «localhost» to <code>tls.Config</code> so it is able to verify the server certificate is correct. This is because <code>tls.Client</code> doesn’t know the value passwd to <code>net.Dial</code>. We will improve on this later.</p>
+
+<h2 id="improving-tls">Improving TLS</h2>
+
+<p>No we added TLS support «manually». This is not ideal and also is not
+ very good to handle errors. Go provides some better methods to setup a 
+TLS server and client.</p>
+
+<h3 id="tls-server-v2">TLS server v2</h3>
+
+<pre><code class="language-golang">package main
+
+import (
+	"crypto/tls"
+	"fmt"
+	"io"
+	"log"
+	"net"
+	"os"
+)
+
+const serverKey = `-----BEGIN EC PARAMETERS-----
+BggqhkjOPQMBBw==
+-----END EC PARAMETERS-----
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEIHg+g2unjA5BkDtXSN9ShN7kbPlbCcqcYdDu+QeV8XWuoAoGCCqGSM49
+AwEHoUQDQgAEcZpodWh3SEs5Hh3rrEiu1LZOYSaNIWO34MgRxvqwz1FMpLxNlx0G
+cSqrxhPubawptX5MSr02ft32kfOlYbaF5Q==
+-----END EC PRIVATE KEY-----
+`
+
+const serverCert = `-----BEGIN CERTIFICATE-----
+MIIB+TCCAZ+gAwIBAgIJAL05LKXo6PrrMAoGCCqGSM49BAMCMFkxCzAJBgNVBAYT
+AkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRn
+aXRzIFB0eSBMdGQxEjAQBgNVBAMMCWxvY2FsaG9zdDAeFw0xNTEyMDgxNDAxMTNa
+Fw0yNTEyMDUxNDAxMTNaMFkxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0
+YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxEjAQBgNVBAMM
+CWxvY2FsaG9zdDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHGaaHVod0hLOR4d
+66xIrtS2TmEmjSFjt+DIEcb6sM9RTKS8TZcdBnEqq8YT7m2sKbV+TEq9Nn7d9pHz
+pWG2heWjUDBOMB0GA1UdDgQWBBR0fqrecDJ44D/fiYJiOeBzfoqEijAfBgNVHSME
+GDAWgBR0fqrecDJ44D/fiYJiOeBzfoqEijAMBgNVHRMEBTADAQH/MAoGCCqGSM49
+BAMCA0gAMEUCIEKzVMF3JqjQjuM2rX7Rx8hancI5KJhwfeKu1xbyR7XaAiEA2UT7
+1xOP035EcraRmWPe7tO0LpXgMxlh2VItpc2uc2w=
+-----END CERTIFICATE-----
+`
+
+func main() {
+	cer, err := tls.X509KeyPair([]byte(serverCert), []byte(serverKey))
+	if err != nil {
+		log.Fatal(err)
+	}
+	config := &amp;tls.Config{Certificates: []tls.Certificate{cer}}
+
+	lp, err := net.Listen("tcp", ":8089")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer lp.Close()
+
+	l := tls.NewListener(lp, config)
+	defer l.Close()
+
+	for {
+		conn, err := l.Accept()
+		if err != nil {
+			log.Fatal(err)
+		}
+		go func(c net.Conn) {
+			io.Copy(os.Stdout, c)
+			fmt.Println()
+			c.Close()
+		}(conn)
+	}
+}
+</code></pre>
+
+<p>In version 1 of the server we were wrapping every connection using <code>tls.Server</code>. In this new improved version we directly wrap the listener returned by <code>net.Listen</code>. This way if we call the listeners <code>Accept</code> method we directly get a TLS connection.</p>
+
+<p>This is already better but we can improve even more.</p>
+
+<h3 id="tls-server-v3">TLS server v3</h3>
+
+<pre><code class="language-golang">package main
+
+import (
+	"crypto/tls"
+	"fmt"
+	"io"
+	"log"
+	"net"
+	"os"
+)
+
+const serverKey = `-----BEGIN EC PARAMETERS-----
+BggqhkjOPQMBBw==
+-----END EC PARAMETERS-----
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEIHg+g2unjA5BkDtXSN9ShN7kbPlbCcqcYdDu+QeV8XWuoAoGCCqGSM49
+AwEHoUQDQgAEcZpodWh3SEs5Hh3rrEiu1LZOYSaNIWO34MgRxvqwz1FMpLxNlx0G
+cSqrxhPubawptX5MSr02ft32kfOlYbaF5Q==
+-----END EC PRIVATE KEY-----
+`
+
+const serverCert = `-----BEGIN CERTIFICATE-----
+MIIB+TCCAZ+gAwIBAgIJAL05LKXo6PrrMAoGCCqGSM49BAMCMFkxCzAJBgNVBAYT
+AkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRn
+aXRzIFB0eSBMdGQxEjAQBgNVBAMMCWxvY2FsaG9zdDAeFw0xNTEyMDgxNDAxMTNa
+Fw0yNTEyMDUxNDAxMTNaMFkxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0
+YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxEjAQBgNVBAMM
+CWxvY2FsaG9zdDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHGaaHVod0hLOR4d
+66xIrtS2TmEmjSFjt+DIEcb6sM9RTKS8TZcdBnEqq8YT7m2sKbV+TEq9Nn7d9pHz
+pWG2heWjUDBOMB0GA1UdDgQWBBR0fqrecDJ44D/fiYJiOeBzfoqEijAfBgNVHSME
+GDAWgBR0fqrecDJ44D/fiYJiOeBzfoqEijAMBgNVHRMEBTADAQH/MAoGCCqGSM49
+BAMCA0gAMEUCIEKzVMF3JqjQjuM2rX7Rx8hancI5KJhwfeKu1xbyR7XaAiEA2UT7
+1xOP035EcraRmWPe7tO0LpXgMxlh2VItpc2uc2w=
+-----END CERTIFICATE-----
+`
+
+func main() {
+	cer, err := tls.X509KeyPair([]byte(serverCert), []byte(serverKey))
+	if err != nil {
+		log.Fatal(err)
+	}
+	config := &amp;tls.Config{Certificates: []tls.Certificate{cer}}
+
+	l, err := tls.Listen("tcp", ":8089", config)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer l.Close()
+
+	for {
+		conn, err := l.Accept()
+		if err != nil {
+			log.Fatal(err)
+		}
+		go func(c net.Conn) {
+			io.Copy(os.Stdout, c)
+			fmt.Println()
+			c.Close()
+		}(conn)
+	}
+}
+</code></pre>
+
+<p>In version 3 instead of wrapping the connection (v1) or the listener (v2) we directly use the <code>tls.Listen</code> method, this replaces <code>net.Listen</code>
+ and takes care of all the TLS stuff for use.
+Now the server looks again quite similar to the plain TCP version, the 
+only overhead comes from the certificate and key handling.</p>
+
+<p>Now that we optimized the server let’s see if we can do the same with the client.</p>
+
+<h3 id="tls-client-v2">TLS client v2</h3>
+
+<pre><code class="language-golang">package main
+
+import (
+	"crypto/tls"
+	"crypto/x509"
+	"io"
+	"log"
+)
+
+const rootCert = `-----BEGIN CERTIFICATE-----
+MIIB+TCCAZ+gAwIBAgIJAL05LKXo6PrrMAoGCCqGSM49BAMCMFkxCzAJBgNVBAYT
+AkFVMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRn
+aXRzIFB0eSBMdGQxEjAQBgNVBAMMCWxvY2FsaG9zdDAeFw0xNTEyMDgxNDAxMTNa
+Fw0yNTEyMDUxNDAxMTNaMFkxCzAJBgNVBAYTAkFVMRMwEQYDVQQIDApTb21lLVN0
+YXRlMSEwHwYDVQQKDBhJbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxEjAQBgNVBAMM
+CWxvY2FsaG9zdDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABHGaaHVod0hLOR4d
+66xIrtS2TmEmjSFjt+DIEcb6sM9RTKS8TZcdBnEqq8YT7m2sKbV+TEq9Nn7d9pHz
+pWG2heWjUDBOMB0GA1UdDgQWBBR0fqrecDJ44D/fiYJiOeBzfoqEijAfBgNVHSME
+GDAWgBR0fqrecDJ44D/fiYJiOeBzfoqEijAMBgNVHRMEBTADAQH/MAoGCCqGSM49
+BAMCA0gAMEUCIEKzVMF3JqjQjuM2rX7Rx8hancI5KJhwfeKu1xbyR7XaAiEA2UT7
+1xOP035EcraRmWPe7tO0LpXgMxlh2VItpc2uc2w=
+-----END CERTIFICATE-----
+`
+
+func main() {
+	roots := x509.NewCertPool()
+	ok := roots.AppendCertsFromPEM([]byte(rootCert))
+	if !ok {
+		log.Fatal("failed to parse root certificate")
+	}
+	config := &amp;tls.Config{RootCAs: roots}
+
+	conn, err := tls.Dial("tcp", "localhost:8089", config)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	io.WriteString(conn, "Hello simple secure Server")
+	conn.Close()
+}
+</code></pre>
+
+<p>Here we don’t wrap the connection but instead of using <code>net.Dial</code> we are directly using <code>tls.Dial</code>.
+This is everything, the client is now almost as simple as the plain TCP one.
+It’s woth noting that we no longer need to explicitly pass the address of the server as we had to do with version 1 as the <code>tls.Dial</code> function takes care of this for us.</p>
+</div>
+
+  <footer class="article-footer">
+
+    <aside class="share">
+  <a href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3a%2f%2fpascal.bach.ch%2f2015%2f12%2f17%2ffrom-tcp-to-tls-in-go%2f&amp;title=From%20TCP%20to%20TLS%20in%20Go" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fpascal.bach.ch%2f2015%2f12%2f17%2ffrom-tcp-to-tls-in-go%2f&amp;text=From%20TCP%20to%20TLS%20in%20Go&amp;tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fpascal.bach.ch%2f2015%2f12%2f17%2ffrom-tcp-to-tls-in-go%2f&amp;t=From%20TCP%20to%20TLS%20in%20Go" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://getpocket.com/edit?url=https%3a%2f%2fpascal.bach.ch%2f2015%2f12%2f17%2ffrom-tcp-to-tls-in-go%2f&amp;title=From%20TCP%20to%20TLS%20in%20Go" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fab fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fpascal.bach.ch%2f2015%2f12%2f17%2ffrom-tcp-to-tls-in-go%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"><i class="fab fa-line" aria-hidden="true"></i></a>
+</aside>
+
+
+    <section class="footer">
+      <div>
+        <nav class="crumb">
+          <ol>
+            <li><a href="https://pascal.bach.ch/"><i class="fas fa-home" aria-hidden="true"></i>TOP</a></li>
+            
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://pascal.bach.ch/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
+            
+            <li class="active">From TCP to TLS in Go</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://pascal.bach.ch/categories/">CATEGORIES</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://pascal.bach.ch/categories/development/">Development</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://pascal.bach.ch/tags/">TAGS</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://pascal.bach.ch/tags/golang/">golang</a></li>
+          
+          <li><a href="https://pascal.bach.ch/tags/tls/">tls</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    <div class="adj">
+      <div class="mrow">
+        
+        <div class="mcol c6">
+          <header>Previous Article</header>
+          <article class="lism">
+  <a href="https://pascal.bach.ch/2015/02/14/configurable-yocto-recipes/">
+    <div class="thumb thumb-a4ac286dbd74a2d6110b49b97e2be3f9"></div>
+
+    <div class="inner">
+      <div class="title">Configurable Yocto/OpenEmbedded recipes</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-02-14T00:05:50JST">Feb 14, 2015</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+        </div>
+        
+        
+        <div class="mcol c6">
+          <header>Next Article</header>
+          <article class="lism">
+  <a href="https://pascal.bach.ch/2016/11/07/keep-docker-clean/">
+    <div class="thumb thumb-137965e95923b9339a72413adaea82fc"></div>
+
+    <div class="inner">
+      <div class="title">Keep your docker clean</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="7007-11-07T22:28:44JST">Nov 7, 2016</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+        </div>
+        
+      </div>
+    </div>
+
+    
+  </div>
+  <div class="mcol c4">
+    <aside class="l-sidebar">
+
+  <div class="sections sidebar">
+    
+
+    <section class="sidebar">
+  <header>LATESTS</header>
+  <div>
+    <div class="articles sm">
+      
+      <article class="lism">
+  <a href="https://pascal.bach.ch/2016/11/10/nixos-on-minnowboard/">
+    <div class="thumb thumb-61f5856d6600c2153d3421e11ce53c4d"></div>
+
+    <div class="inner">
+      <div class="title">NixOS on a MinnowBoard MAX and Turbot (serial console)</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="10007-11-10T21:16:00JST">Nov 10, 2016</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://pascal.bach.ch/2016/11/07/keep-docker-clean/">
+    <div class="thumb thumb-137965e95923b9339a72413adaea82fc"></div>
+
+    <div class="inner">
+      <div class="title">Keep your docker clean</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="7007-11-07T22:28:44JST">Nov 7, 2016</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://pascal.bach.ch/2015/12/17/from-tcp-to-tls-in-go/">
+    <div class="thumb thumb-7d129a0a7772acbb6f3d15a8fdfa407c"></div>
+
+    <div class="inner">
+      <div class="title">From TCP to TLS in Go</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="17007-12-17T23:38:52JST">Dec 17, 2015</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://pascal.bach.ch/2015/02/14/configurable-yocto-recipes/">
+    <div class="thumb thumb-a4ac286dbd74a2d6110b49b97e2be3f9"></div>
+
+    <div class="inner">
+      <div class="title">Configurable Yocto/OpenEmbedded recipes</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="14007-02-14T00:05:50JST">Feb 14, 2015</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://pascal.bach.ch/2013/06/05/new-unison-2-40-102-builds-available/">
+    <div class="thumb thumb-2f62769887b002c321641a6a0f2ff7ae"></div>
+
+    <div class="inner">
+      <div class="title">New Unison (2.40.102) builds available</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="5007-06-05T20:58:51JST">Jun 5, 2013</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://pascal.bach.ch/2011/03/11/using-cygwin-ssh-with-putty-pageant/">
+    <div class="thumb thumb-f4f00d7a297c3a4438f9e9c9065fcb6c"></div>
+
+    <div class="inner">
+      <div class="title">Using Cygwin SSH with Putty Pageant</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="11007-03-11T10:31:30JST">Mar 11, 2011</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://pascal.bach.ch/2010/10/19/use-zentyal-zarafe-z-push-with-an-n900/">
+    <div class="thumb thumb-45b8f0b848f102d81e9a2bb0d298746a"></div>
+
+    <div class="inner">
+      <div class="title">Use Zentyal Zarafa z-push with an N900</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="19007-10-19T21:46:49JST">Oct 19, 2010</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://pascal.bach.ch/2010/05/06/build-ubuntudebian-packages-from-source-and-apply-a-patch/">
+    <div class="thumb thumb-0b472325aadcaf21d3916381a944520b"></div>
+
+    <div class="inner">
+      <div class="title">Build Ubuntu/Debian packages from source (and apply a patch)</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="6007-05-06T17:01:58JST">May 6, 2010</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://pascal.bach.ch/2010/04/30/automatically-start-screen-on-ssh-login/">
+    <div class="thumb thumb-2f4b6994eba27b2840d71af16f930401"></div>
+
+    <div class="inner">
+      <div class="title">Automatically start SCREEN on SSH login</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="30007-04-30T20:52:48JST">Apr 30, 2010</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://pascal.bach.ch/2010/01/21/bazaar-pro-engineer-helpers-0-3-0-released/">
+    <div class="thumb thumb-b79f67c4e0b4fb682c98de7354340696"></div>
+
+    <div class="inner">
+      <div class="title">Bazaar Pro Engineer Helpers 0.3.0 Released</div>
+
+      <ul class="facts sm">
+        <li><i class="fas fa-calendar" aria-hidden="true"></i><time datetime="21007-01-21T20:40:02JST">Jan 21, 2010</time></li>
+        <li><i class="fas fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+    </div>
+  </div>
+</section>
+
+    
+<section class="sidebar">
+  <header>CATEGORIES</header>
+  <div>
+    <ul class="terms">
+      <li><a href="https://pascal.bach.ch/categories/development">development <span class="count">(15)</span></a></li><li><a href="https://pascal.bach.ch/categories/howtos">howtos <span class="count">(14)</span></a></li><li><a href="https://pascal.bach.ch/categories/experience">experience <span class="count">(6)</span></a></li><li><a href="https://pascal.bach.ch/categories/projects">projects <span class="count">(2)</span></a></li><li><a href="https://pascal.bach.ch/categories/yocto">yocto <span class="count">(1)</span></a></li>
+    </ul>
+  </div>
+</section>
+
+
+
+    
+<section class="sidebar">
+  <header>TAGS</header>
+  <div>
+    <ul class="terms">
+      <li><a href="https://pascal.bach.ch/tags/python">python <span class="count">(9)</span></a></li><li><a href="https://pascal.bach.ch/tags/ucplib">ucplib <span class="count">(5)</span></a></li><li><a href="https://pascal.bach.ch/tags/openmoko">openmoko <span class="count">(4)</span></a></li><li><a href="https://pascal.bach.ch/tags/sms">sms <span class="count">(4)</span></a></li><li><a href="https://pascal.bach.ch/tags/bzr">bzr <span class="count">(3)</span></a></li><li><a href="https://pascal.bach.ch/tags/proe">proe <span class="count">(3)</span></a></li><li><a href="https://pascal.bach.ch/tags/ssh">ssh <span class="count">(3)</span></a></li><li><a href="https://pascal.bach.ch/tags/ubuntu">ubuntu <span class="count">(3)</span></a></li><li><a href="https://pascal.bach.ch/tags/vlc">vlc <span class="count">(3)</span></a></li><li><a href="https://pascal.bach.ch/tags/vmware">vmware <span class="count">(3)</span></a></li>
+    </ul>
+  </div>
+</section>
+
+
+
+  </div>
+
+</aside>
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-container">
+        <p><span class="h-logo">© Pascal's Blog</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="From%20TCP%20to%20TLS%20in%20Go%20-%20Pascal's%20Blog_files/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  
+
+
+</body></html>

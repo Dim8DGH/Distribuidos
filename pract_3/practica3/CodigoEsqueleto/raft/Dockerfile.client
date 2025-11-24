@@ -1,0 +1,8 @@
+FROM alpine
+
+COPY ./bin/cltraft /client-raft
+
+EXPOSE 29000
+
+ENTRYPOINT ["/client-raft"]
+

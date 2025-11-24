@@ -1,0 +1,23 @@
+#Puesta en marcha de PRIMER Pod sin tolerancia a fallos
+apiVersion: v1
+kind: Pod
+metadata:
+    # Nombre del Pod
+  name: a1
+spec:
+  hostname: a1
+  subdomain: golang
+  # dnsPolicy: ClusterFirst
+  # Deshabilitar la tolerancia a fallos en la ejecución del POD
+  restartPolicy: Never  # no nos interesa la tolerancia a fallos para estos
+  containers:
+  - name: golang
+    image: alpine
+    env:
+    - name: MIPODIP
+      valueFrom:
+        fieldRef:
+          fieldPath: status.podIP
+    command:
+    - echo
+    - $(MIPODIP)

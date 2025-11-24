@@ -1,0 +1,86 @@
+# Activación de un recurso Service "headless", solo para obtener  el alta
+# de los nombres de Pods en el DNS (para descubrir su IP).
+#
+# Parece que los nombres del campo "containers" de pods a dar de alta en dns
+# deben coincidir el subcampo campo "name" (servidor) del manifiesto con el nombre
+# del contenedor en el registro (localhost:5001/servidor:latest)
+apiVersion: v1
+kind: Service
+metadata:
+    # Nombre del servicio
+  name: prueba
+spec:
+  clusterIP: None
+  selector:
+      # tiene que coincidir con label definido en pod
+    app: prueba
+  ports:
+  - port: 6000
+---
+# Puesta en marcha de PRIMER Pod para Servidor "s1" del servicio "prueba"
+apiVersion: v1
+kind: Pod
+metadata:
+    # Nombre del Pod
+  name: s1
+  labels:
+    app: prueba
+spec:
+  hostname: s1
+  subdomain: prueba
+  dnsPolicy: ClusterFirst
+  # Deshabilitar la tolerancia a fallos en la ejecución del POD
+  restartPolicy: Never  # no nos interesa la tolerancia a fallos para estos
+  containers:
+  - name: servidor
+    image: localhost:5001/servidor:latest
+    env:
+    - name: MIDOMINIODNS
+      value: prueba.default.svc.cluster.local
+    - name: MINOMBREPOD
+      valueFrom:
+        fieldRef:
+          fieldPath: metadata.name
+    command:
+    - /servidor
+    - $(MINOMBREPOD).$(MIDOMINIODNS):6000
+    ports:
+    - containerPort: 6000
+---
+# Puesta en marcha de SEGUNDO Pod para cliente 1 interactivo
+apiVersion: v1
+kind: Pod
+metadata:
+  name: c1
+spec:
+  restartPolicy: Never
+  containers:
+  - name: cliente
+    image: localhost:5001/cliente:latest
+    command:
+    - sleep
+    - "3600"
+    ports:
+    - containerPort: 7000
+---
+# Puesta en marcha de TERCER Pod para cliente 2 automatico
+apiVersion: v1
+kind: Pod
+metadata:
+  name: c2
+spec:
+  restartPolicy: Never
+  containers:
+  - name: cliente
+    image: localhost:5001/cliente:latest
+    env:
+    - name: MIPODIP
+      valueFrom:
+        fieldRef:
+          fieldPath: status.podIP
+    command:
+    - cliente
+    - $(MIPODIP):7000
+    - "s1.prueba.default.svc.cluster.local:6000"
+    ports:
+    - containerPort: 7000

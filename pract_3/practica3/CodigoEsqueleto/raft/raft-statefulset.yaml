@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: raft-service
+  labels:
+    app: raft-node
+spec:
+  clusterIP: None
+  selector:
+    app: raft-node
+  ports:
+  - port: 29000
+    name: raft-rpc
+    protocol: TCP
+    targetPort: 29000
+
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: raft
+spec:
+  serviceName: raft-service
+  replicas: 3
+  selector:
+    matchLabels:
+      app: raft-node
+  template:
+    metadata:
+      labels:
+        app: raft-node
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: raft-node
+        image: localhost:5001/raft-server:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 29000
+        env:
+        - name: MY_POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: MY_POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            INDEX=$(echo $MY_POD_NAME | grep -o '[0-9]*$')
+            
+            PEERS=""
+            for i in $(seq 0 $(expr ${REPLICAS} - 1)); do
+              PEERS="${PEERS} raft-${i}.${SERVICE_NAME}.${MY_POD_NAMESPACE}.svc.cluster.local:${RAFT_RPC_PORT}"
+            done
+            
+            exec /servidor-raft ${INDEX} ${PEERS}
+        envFrom:
+        - configMapRef:
+            name: raft-config

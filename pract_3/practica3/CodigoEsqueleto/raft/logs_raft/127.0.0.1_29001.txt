@@ -1,0 +1,522 @@
+[37m127.0.0.1_29001 -> 10:37:33.107075 raft.go:227: logger initialized[0m
+[36m127.0.0.1_29001 -> 10:37:33.107245 raft.go:273: temporizador de elección iniciado (244ms), término=0[0m
+[36m127.0.0.1_29001 -> 10:37:33.357434 raft.go:312: es ahora CANDIDATO (término=1); log=[][0m
+[36m127.0.0.1_29001 -> 10:37:33.357519 raft.go:273: temporizador de elección iniciado (280ms), término=1[0m
+[37m127.0.0.1_29001 -> 10:37:33.357603 raft.go:333: enviando PeticionVoto a 1: {Term:1 CandidateId:0 LastLogIndex:-1 LastLogTerm:-1}[0m
+[37m127.0.0.1_29001 -> 10:37:33.357672 raft.go:333: enviando PeticionVoto a 2: {Term:1 CandidateId:0 LastLogIndex:-1 LastLogTerm:-1}[0m
+[36m127.0.0.1_29001 -> 10:37:33.638654 raft.go:312: es ahora CANDIDATO (término=2); log=[][0m
+[36m127.0.0.1_29001 -> 10:37:33.638724 raft.go:273: temporizador de elección iniciado (219ms), término=2[0m
+[37m127.0.0.1_29001 -> 10:37:33.638771 raft.go:333: enviando PeticionVoto a 1: {Term:2 CandidateId:0 LastLogIndex:-1 LastLogTerm:-1}[0m
+[37m127.0.0.1_29001 -> 10:37:33.638829 raft.go:333: enviando PeticionVoto a 2: {Term:2 CandidateId:0 LastLogIndex:-1 LastLogTerm:-1}[0m
+[37m127.0.0.1_29001 -> 10:37:33.640260 raft.go:338: recibida RespuestaPeticionVoto {Term:2 VoteGranted:true}[0m
+[32m127.0.0.1_29001 -> 10:37:33.640308 raft.go:354: gana la elección con 2 votos[0m
+[32m127.0.0.1_29001 -> 10:37:33.640344 raft.go:392: es ahora LIDER; término=2, nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1]; log=[][0m
+[35m127.0.0.1_29001 -> 10:37:33.640390 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:33.640424 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:33.641505 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[37m127.0.0.1_29001 -> 10:37:33.649599 raft.go:283: salgo del temporizador porque el estado es Leader[0m
+[35m127.0.0.1_29001 -> 10:37:33.690977 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:33.690996 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:33.692133 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:33.741348 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:33.741390 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:33.742547 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:33.790717 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:33.790766 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:33.791835 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:33.841020 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:33.841042 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:33.842080 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:33.891241 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:33.891292 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:33.892488 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:33.940572 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:33.940589 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:33.941409 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:33.990595 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:33.990641 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:33.991848 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.040908 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.040946 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.042132 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.091185 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.091217 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.092251 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.141294 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.141351 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.142628 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.142804 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.190827 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.190885 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.192318 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.192542 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.240481 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.240534 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.241813 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.242078 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.291131 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.291108 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.292287 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.292332 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.341433 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.341452 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.342571 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.342623 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.390582 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.390626 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.391747 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.391791 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.440826 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.440874 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.442154 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.442433 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.491398 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.491446 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.492462 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.492658 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.540669 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.540719 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.541956 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.542236 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.591236 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.591295 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.592647 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.592684 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.640676 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.640729 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.641792 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.641841 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.690883 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.690940 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.692010 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.692254 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.741255 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.741305 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.742600 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.742685 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.790646 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.790669 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.791829 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.792000 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.841125 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.841146 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.842305 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.842347 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.891320 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.891327 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.892422 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.892610 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.940647 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.940696 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.941992 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.942029 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:34.991048 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:34.991033 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:34.992199 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:34.992268 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.041210 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.041258 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.042330 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.042513 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.090446 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.090502 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.091600 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.091638 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.140720 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.140774 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.141970 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.141998 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.190990 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.191041 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.192270 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.192453 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.241225 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.241193 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.242239 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.242379 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.291465 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.291516 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.292790 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.292873 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.340711 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.340754 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.341795 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.341853 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.390875 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.390948 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.392109 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.392167 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.441053 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.441104 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.442349 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.442578 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.490573 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.490603 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.491782 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.491833 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.540830 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.540876 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.542259 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.542302 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.591179 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.591225 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.592200 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.592375 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.641374 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.641418 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.642487 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.642808 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.690686 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.690747 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.692204 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.692265 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.741131 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.741192 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.742192 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.742382 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.791386 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.791428 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.792677 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.792721 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.840690 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.840759 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.841912 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.842084 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.891191 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.891239 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.892556 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.892616 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.940451 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.940503 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.941968 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.942035 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:35.990915 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:35.990947 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:35.991880 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:35.992106 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.041073 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.041128 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.042211 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.042402 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.091378 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.091429 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.092661 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.092952 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.140820 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.140866 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.142041 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.142119 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.191052 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.191108 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.192575 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.192624 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.240577 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.240625 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.241949 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.242220 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.291138 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.291204 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.292544 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.292609 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.340445 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.340507 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.341626 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.341783 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.390846 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.390892 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.392289 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.392553 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.441448 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.441489 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.442793 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.442941 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.490945 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.491021 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.492070 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.492324 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.540441 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.540499 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.541626 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.541848 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.590804 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.590851 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.592623 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.592829 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.640526 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.640568 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.641742 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.641816 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.690768 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.690814 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.692161 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.692444 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.741351 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.741396 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.742634 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.742865 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.790813 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.790861 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.792025 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.792105 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.841032 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.841066 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.842292 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.842346 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.891368 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.891419 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.892657 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.892886 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.940887 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.940865 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.942148 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.942212 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:36.991144 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:36.991186 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:36.992131 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:36.992188 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:37.041236 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:37.041273 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:37.042472 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:37.042726 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:37.090655 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:37.090716 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:37.091957 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:37.092015 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:37.141149 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:37.141212 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:37.142456 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:37.142501 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:37.191417 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:37.191468 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:37.192328 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:37.192528 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:37.240465 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:37.240765 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:37.241740 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:37.241924 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:37.290978 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:37.290968 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:37.292210 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:37.292252 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:37.341170 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:37.341186 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:37.342219 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:37.342343 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[35m127.0.0.1_29001 -> 10:37:37.391357 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:37.391408 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:37.392456 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:37.392612 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:0 2:0], matchIndex=map[1:-1 2:-1][0m
+[37m127.0.0.1_29001 -> 10:37:37.415851 raft.go:573: solicitud de usuario recibida en estado Leader: {escribir clave4 valor4}[0m
+[37m127.0.0.1_29001 -> 10:37:37.415893 raft.go:581: registro actual: [{2 {escribir clave4 valor4}}][0m
+[37m127.0.0.1_29001 -> 10:37:37.415942 raft.go:573: solicitud de usuario recibida en estado Leader: {escribir clave1 valor1}[0m
+[37m127.0.0.1_29001 -> 10:37:37.416118 raft.go:581: registro actual: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}}][0m
+[37m127.0.0.1_29001 -> 10:37:37.416182 raft.go:573: solicitud de usuario recibida en estado Leader: {escribir clave2 valor2}[0m
+[37m127.0.0.1_29001 -> 10:37:37.416205 raft.go:581: registro actual: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}}][0m
+[37m127.0.0.1_29001 -> 10:37:37.416256 raft.go:573: solicitud de usuario recibida en estado Leader: {escribir clave0 valor0}[0m
+[37m127.0.0.1_29001 -> 10:37:37.416283 raft.go:581: registro actual: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}}][0m
+[37m127.0.0.1_29001 -> 10:37:37.416336 raft.go:573: solicitud de usuario recibida en estado Leader: {escribir clave3 valor3}[0m
+[37m127.0.0.1_29001 -> 10:37:37.416362 raft.go:581: registro actual: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29001 -> 10:37:37.440900 raft.go:453: enviando AppendEntries a 2: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Term:2 Command:{Operacion:escribir Clave:clave4 Valor:valor4}} {Term:2 Command:{Operacion:escribir Clave:clave1 Valor:valor1}} {Term:2 Command:{Operacion:escribir Clave:clave2 Valor:valor2}} {Term:2 Command:{Operacion:escribir Clave:clave0 Valor:valor0}} {Term:2 Command:{Operacion:escribir Clave:clave3 Valor:valor3}}] LeaderCommit:-1}[0m
+[35m127.0.0.1_29001 -> 10:37:37.440891 raft.go:453: enviando AppendEntries a 1: ni=0, args={Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Term:2 Command:{Operacion:escribir Clave:clave4 Valor:valor4}} {Term:2 Command:{Operacion:escribir Clave:clave1 Valor:valor1}} {Term:2 Command:{Operacion:escribir Clave:clave2 Valor:valor2}} {Term:2 Command:{Operacion:escribir Clave:clave0 Valor:valor0}} {Term:2 Command:{Operacion:escribir Clave:clave3 Valor:valor3}}] LeaderCommit:-1}[0m
+[32m127.0.0.1_29001 -> 10:37:37.442134 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:0], matchIndex=map[1:4 2:-1][0m
+[32m127.0.0.1_29001 -> 10:37:37.442178 raft.go:487: commitIndex actualizado a 4[0m
+[32m127.0.0.1_29001 -> 10:37:37.442199 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.442214 raft.go:523: aplicando entradas=[{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}], último aplicado previo=-1[0m
+[35m127.0.0.1_29001 -> 10:37:37.491164 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:37.491206 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:37.492464 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.492507 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:37.541434 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:37.541452 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:37.542454 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.542515 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:37.591423 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:37.591463 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:37.592481 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.592611 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:37.640698 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:37.640667 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:37.642018 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.642267 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:37.691181 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:37.691205 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:37.692336 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.692501 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:37.740666 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:37.740576 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:37.742123 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.742276 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:37.791252 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:37.791276 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:37.792503 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.792543 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:37.840470 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:37.840726 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:37.841758 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.841999 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:37.891026 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:37.891017 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:37.892386 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.892428 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:37.941302 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:37.941296 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:37.942297 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.942472 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:37.990428 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:37.990686 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:37.991870 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:37.991934 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.041147 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.041087 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.042306 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.042344 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.090487 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.090505 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.091832 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.091901 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.140848 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.140880 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.142158 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.142342 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.191306 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.191352 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.192477 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.192665 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.240436 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.240416 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.241736 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.241805 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.290723 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.290748 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.291849 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.291916 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.340783 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.340774 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.342200 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.342413 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.391363 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.391387 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.392512 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.392670 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.440677 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.440723 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.442163 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.442373 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.491353 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.491372 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.492530 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.492583 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.540455 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.540507 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.541810 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.541974 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.590984 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.591011 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.592274 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.592311 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.641272 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.641310 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.642441 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.642486 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.691454 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.691491 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.692587 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.692639 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.740596 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.740578 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.741874 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.742104 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.791162 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.791239 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.792456 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.792497 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.840444 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.840426 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.841687 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.842868 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.890968 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.890952 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.892184 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.892422 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.941293 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.941319 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:38.942171 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:38.942246 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:38.991259 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:38.991261 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.001017 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.001065 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.041022 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.041062 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.042287 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.042438 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.091463 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.091490 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.092303 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.092491 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.140441 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.140489 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.141906 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.141971 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.190872 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.190946 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.192282 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.192331 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.241196 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.241246 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.242440 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.242638 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.290640 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.290685 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.292059 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.292131 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.341044 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.341109 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.342279 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.342322 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.391217 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.391266 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.392423 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.392476 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.441375 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.441426 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.442790 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.442837 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.490728 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.490780 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.491924 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.491967 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.540959 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.541003 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.542920 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.542989 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.590541 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.590576 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.591908 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.592105 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.641165 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.641207 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.642240 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.642312 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.691274 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.691311 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.692477 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.692516 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.740427 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.740479 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.741729 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.741804 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.790718 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.790756 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.791978 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.792225 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.841177 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.841158 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.842400 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.842446 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[35m127.0.0.1_29001 -> 10:37:39.891375 raft.go:453: enviando AppendEntries a 2: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[35m127.0.0.1_29001 -> 10:37:39.891422 raft.go:453: enviando AppendEntries a 1: ni=5, args={Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[32m127.0.0.1_29001 -> 10:37:39.892457 raft.go:469: AppendEntries OK desde 1: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[32m127.0.0.1_29001 -> 10:37:39.892539 raft.go:469: AppendEntries OK desde 2: nextIndex=map[1:5 2:5], matchIndex=map[1:4 2:4][0m
+[31m127.0.0.1_29001 -> 10:37:39.923937 raft.go:544: es ahora MUERTO[0m
+[37m127.0.0.1_29001 -> 10:37:39.924001 raft.go:532: aplicador de commits finaliza[0m

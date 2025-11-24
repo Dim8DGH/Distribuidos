@@ -1,0 +1,7 @@
+FROM alpine
+
+COPY ./bin/srvraft /servidor-raft
+
+EXPOSE 29000
+
+ENTRYPOINT ["/servidor-raft"]

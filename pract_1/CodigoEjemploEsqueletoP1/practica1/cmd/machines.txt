@@ -1,3 +1,2 @@
-127.0.0.1:9001
-127.0.0.1:9002
-127.0.0.1:9003
+192.168.3.10:31020:a837603:/misc/alumnos/sd/sd2526/a837603/cmd/worker/worker
+192.168.3.11:31020:a837603:/misc/alumnos/sd/sd2526/a837603/cmd/worker/worker

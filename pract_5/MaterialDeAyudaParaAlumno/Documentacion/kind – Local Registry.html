@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>kind – Local Registry</title>
+  
+<style>html{width:100%;font-size:18px;line-height:1;-webkit-font-smoothing:antialiased!important;-moz-osx-font-smoothing:grayscale!important;text-rendering:optimizeLegibility!important;-webkit-tap-highlight-color:transparent;height:100%;min-height:100%;margin:0;padding:0;font-size:100%;background-color:#fff;color:#000;font-family:-apple-system,BlinkMacSystemFont,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}code,pre{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Roboto Mono,Courier,monospace}body{width:100%;margin:0;padding:0;font-size:18px;line-height:1.5;min-height:100%;display:flex;flex-direction:column;background-color:#fff}#wrapper{background-color:#fff;max-width:100%;clear:both;overflow-x:hidden;flex:1 0 auto;margin:0;margin-left:240px}.sidebar-collapsed #wrapper{margin-left:0}#content,#footer-content{margin:0 auto;padding:0 1em;width:calc(100% - 2em);max-width:40em}#footer{background:#44a2f1;color:#fff;padding:1em;margin-top:1em;border-top:.1em solid rgba(0,0,0,.1)}#footer a{color:#fff}.footer{text-align:center}.footer>*{font-size:.8em;line-height:1.4}#content{padding-top:1em;min-height:calc(100vh - 4em)}#navbar{position:fixed;top:0;width:calc(100% - 240px);padding:2px 0;margin-left:.1em;background-color:#fff;border-bottom:.1em solid rgba(0,0,0,.1);display:flex;justify-content:space-between;z-index:99999}.sidebar-collapsed #navbar{width:100%;margin-left:0}#navbar-title>a{font-weight:700;font-size:1.2em;padding:0 4px;vertical-align:middle}#navbar-title>a,#github>a{text-decoration:none}#sidebar-toggle{color:#000;cursor:pointer;padding:.1em .5em;padding-bottom:0;user-select:none}#github{padding:0 .5em}#github img{height:1.4em;width:1.4em;vertical-align:middle}#noticebar{padding:1.5em;padding-top:2em;padding-bottom:1em;margin-bottom:-1.5em;border-bottom:.1em solid rgba(0,0,0,.1)}#noticebar>*{max-width:46rem;margin-left:auto;margin-right:auto;margin-block-end:0;margin-block-start:.25em}#noticebar.black{color:#fff;background:#000}#navbar.black{color:#fff;background:#000}#noticebar.docker-blue{background:#44a2f1;color:#fff}#navbar.docker-blue{background:#44a2f1;color:#fff}.black a,.docker-blue a{color:#fff}#navbar.black>#sidebar-toggle,#navbar.docker-blue>#sidebar-toggle{color:#fff}#navbar.black>#github,#navbar.docker-blue>#github{filter:invert(1)}#sidebar{height:100%;position:fixed;display:flex;flex-direction:column;width:240px;border-right:.1em solid rgba(0,0,0,.1);background-color:#fafafa;z-index:99999;overflow-y:auto}.sidebar-collapsed #sidebar{display:none}#sidebar-logo{padding:16px;padding-bottom:10px}#sidebar-title{display:none;margin-top:-16px;padding-right:37px;margin-bottom:10px;text-align:center;text-decoration:none;font-size:24px;font-weight:700}#sidebar li.active-entry :first-child,#sidebar li.active :first-child{font-weight:700}#sidebar li.active-entry :first-child{color:#000}a{color:#326be5}p{margin-block-start:.5em}h1,h2,h3,h4,h5{margin-block-start:1rem;margin-block-end:.25rem}#content img{max-width:100%}hr{background:#333;border:1px solid #333}pre{background-color:#f3f4f4!important;overflow-x:auto;border-radius:0;padding:1em;font-size:85%}code{background-color:#f3f4f4;border-radius:3px;padding:.1em .4em;font-size:85%}pre code{background-color:transparent;padding:0;font-size:100%;border-radius:0}table.includecode{max-width:100%;width:100%;table-layout:fixed;background:#f3f4f4;border:.15em solid #000;border-spacing:0}table.includecode thead{background:#333;color:#fff}table.includecode thead th a{color:#fff}table.includecode thead th{border-bottom:.1em solid #000;font-weight:400;font-size:.9em}table.includecode thead th{text-align:right}table.includecode thead th button{background:#326be5;border:.25em solid #fff;color:#fff;font-weight:700;margin:.25em;cursor:pointer;padding:.1em .5em}table.includecode pre{margin:0}.hidden-copy-text{background:0 0;width:2em;height:2em;position:fixed;top:0;left:0}.hanchor{font-size:100%;visibility:hidden;font-size:.5em;vertical-align:middle;text-decoration:none!important}h1:hover a,h2:hover a,h3:hover a,h4:hover a{visibility:visible}#content #TableOfContents ul{margin-block-start:0;margin-block-end:0}#content ul{padding-left:1.75em;margin-block-start:.5em;margin-block-end:.5em}#content ul ul{padding-left:1em;margin-block-start:0}#sidebar ul{margin-bottom:1em}#sidebar ul ul{padding-left:1.25em}.page-description{border-left-color:#000;background:#3b4d56;color:#fff;font-size:1.2em;line-height:1.4em;margin-block-start:0;margin-block-end:0}.page-description a{color:#0bd8ec}.page-description code{color:#000}blockquote{border-left:.5rem solid #326ce4;background:#c9e6ff;color:#000;padding:1em 1.5em;margin-inline-start:0;margin-inline-end:0}blockquote p{margin-block-start:.75em;margin-block-end:.75em}.video-wrapper{position:relative;width:100%;height:0;padding-bottom:56.25%}.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}.gh-label{display:inline-block;padding:0 7px;font-size:12px;font-weight:500;line-height:18px;border:1px solid transparent;border-radius:2em;background:#bfd4f2;text-decoration:none}@media(max-width:50em){#content{font-size:16px}#wrapper{margin-left:0}#wrapper #navbar{margin-left:241px}.sidebar-collapsed #wrapper #navbar{margin-left:0}#content ul{padding-left:1.5em}}:target::before{content:"";display:block;height:2em;margin:-2em 0 0}</style>
+
+  
+<script>function toggleSidebar(){if(document.body.classList.contains('sidebar-collapsed')){window.localStorage.setItem('sidebar-collapsed','false');showSideBar();}else{window.localStorage.setItem('sidebar-collapsed','true');hideSideBar();}}
+function showSideBar(){document.body.classList.remove('sidebar-collapsed');}
+function hideSideBar(){document.body.classList.add('sidebar-collapsed');}
+function getWidth(){return Math.max(document.body.scrollWidth,document.documentElement.scrollWidth,document.body.offsetWidth,document.documentElement.offsetWidth,document.documentElement.clientWidth);}
+var oldWidth;document.addEventListener("DOMContentLoaded",function(){var manualCollapsed=window.localStorage.getItem('sidebar-collapsed');var width=getWidth();if(width>900&&(manualCollapsed=='false'||manualCollapsed==null)){showSideBar();}
+oldWidth=width;window.addEventListener("resize",function(){var width=getWidth();if(oldWidth==width){oldWidth=width;return;}
+oldWidth=width;if(width<=900){hideSideBar();}else{var manualCollapsed=window.localStorage.getItem('sidebar-collapsed');if(manualCollapsed=='false'||manualCollapsed==null){showSideBar();}}});});function copyText(elementID){var elem=document.getElementById(elementID);elem.select();elem.setSelectionRange(0,99999);document.execCommand("copy");}</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://kind.sigs.k8s.io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://kind.sigs.k8s.io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://kind.sigs.k8s.io/favicon-16x16.png">
+  <link rel="manifest" href="https://kind.sigs.k8s.io/site.webmanifest">
+  <link rel="mask-icon" href="https://kind.sigs.k8s.io/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body ontouchstart="return true" class="">
+<div id="sidebar">
+  <a href="https://kind.sigs.k8s.io/" id="sidebar-logo"><img src="kind%20%E2%80%93%20Local%20Registry_files/logo.png" width="100%"></a>
+  <div style="background-color: #0000001a; width: 100%; height: 1px; min-height: .1em;"></div>
+  <ul>
+    
+    
+      
+        
+          <li class="">
+            <a href="https://kind.sigs.k8s.io/">
+              
+              <span>Home</span>
+            </a>
+          </li>
+        
+      
+    
+      
+        <li class="active"><span>User Guide</span></li>
+        <ul class="sub-menu">
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/user/quick-start/">Quick Start</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/user/known-issues/">Known Issues</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/user/configuration/">Configuration</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/user/ingress/">Ingress</a>
+            </li>
+          
+            <li class="active-entry">
+              <a href="https://kind.sigs.k8s.io/docs/user/local-registry/">Local Registry</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/user/private-registries/">Private Registries</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/user/using-wsl2/">Using WSL2</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/user/working-offline/">Working Offline</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/user/resources/">Resources</a>
+            </li>
+          
+        </ul>
+      
+    
+      
+        <li class=""><span>Design</span></li>
+        <ul class="sub-menu">
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/design/principles/">Principles</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/design/initial/">Initial design</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/design/base-image/">Base Image</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/design/node-image/">Node Image</a>
+            </li>
+          
+        </ul>
+      
+    
+      
+        <li class=""><span>Contributing</span></li>
+        <ul class="sub-menu">
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/contributing/getting-started/">Getting Started</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/contributing/project-scope/">Project Scope</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/contributing/development/">Development</a>
+            </li>
+          
+            <li class="">
+              <a href="https://kind.sigs.k8s.io/docs/contributing/1.0-roadmap/">1.0 Roadmap 🗺</a>
+            </li>
+          
+        </ul>
+      
+    
+  </ul>
+</div>
+<div id="wrapper"><div id="navbar" class="docker-blue">
+  <span id="sidebar-toggle" onclick="toggleSidebar()">☰</span><span id="navbar-title"><a href="https://kind.sigs.k8s.io/">kind</a></span><span id="github"><a href="https://github.com/kubernetes-sigs/kind/"><img alt="github" title="github" src="kind%20%E2%80%93%20Local%20Registry_files/github-mark-120px-plus.png"></a></span>
+</div>
+<div id="noticebar" class="docker-blue">
+  <h2>Dockershim <a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.20.md#deprecation">deprecation</a> does NOT impact kind.&nbsp;&nbsp;🐳</h2>
+  <p>If you already use kind you've actually been testing your workloads on containerd!</p>
+  <p>While kind uses docker or podman on your host, it uses <a href="https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/">CRI</a> / <a href="https://containerd.io/">containerd</a> "inside" the nodes and does <strong>not</strong> use <a href="https://kubernetes.io/dockershim">dockershim</a>.</p>
+  <p>Carry on and be KiND! ❤️</p>
+</div>
+
+
+<div id="content">
+<h1>Local Registry</h1>
+
+
+
+<blockquote class="page-description"><p>This guide covers how to configure KIND with a local container image registry.</p>
+<p>In the future this will be replaced by <a href="https://github.com/kubernetes-sigs/kind/issues/1213">a built-in feature</a>, and this guide will
+cover usage instead.</p>
+</blockquote>
+
+
+<h2 id="create-a-cluster-and-registry">Create A Cluster And Registry<a href="#create-a-cluster-and-registry" class="hanchor" arialabel="Anchor"> 🔗︎</a> </h2>
+<p>The following shell script will create a local docker registry and a kind cluster
+with it enabled.</p>
+
+
+
+
+
+
+
+
+<textarea class="hidden-copy-text" id="code-examples/kind-with-registry.sh-hidden-copy-text">#!/bin/sh
+set -o errexit
+
+# create registry container unless it already exists
+reg_name='kind-registry'
+reg_port='5000'
+running="$(docker inspect -f '{{.State.Running}}' "${reg_name}" 2&gt;/dev/null || true)"
+if [ "${running}" != 'true' ]; then
+  docker run \
+    -d --restart=always -p "${reg_port}:5000" --name "${reg_name}" \
+    registry:2
+fi
+
+# create a cluster with the local registry enabled in containerd
+cat &lt;&lt;EOF | kind create cluster --config=-
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+containerdConfigPatches:
+- |-
+  [plugins."io.containerd.grpc.v1.cri".registry.mirrors."localhost:${reg_port}"]
+    endpoint = ["http://${reg_name}:${reg_port}"]
+EOF
+
+# connect the registry to the cluster network
+# (the network may already be connected)
+docker network connect "kind" "${reg_name}" || true
+
+# Document the local registry
+# https://github.com/kubernetes/enhancements/tree/master/keps/sig-cluster-lifecycle/generic/1755-communicating-a-local-registry
+cat &lt;&lt;EOF | kubectl apply -f -
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: local-registry-hosting
+  namespace: kube-public
+data:
+  localRegistryHosting.v1: |
+    host: "localhost:${reg_port}"
+    help: "https://kind.sigs.k8s.io/docs/user/local-registry/"
+EOF
+
+</textarea><table class="includecode" id="code-examples/kind-with-registry.sh">
+  <thead>
+    <tr>
+      <th><a href="https://kind.sigs.k8s.io/examples/kind-with-registry.sh">examples/kind-with-registry.sh</a> <button onclick='copyText("code-examples\/kind-with-registry.sh-hidden-copy-text");'>COPY</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#00f">#!/bin/sh
+</span><span style="color:#00f"></span>set -o errexit
+
+<span style="color:#008000"># create registry container unless it already exists</span>
+reg_name=<span style="color:#a31515">'kind-registry'</span>
+reg_port=<span style="color:#a31515">'5000'</span>
+running=<span style="color:#a31515">"</span><span style="color:#00f">$(</span>docker inspect -f <span style="color:#a31515">'{{.State.Running}}'</span> <span style="color:#a31515">"</span><span style="color:#a31515">${</span>reg_name<span style="color:#a31515">}</span><span style="color:#a31515">"</span> 2&gt;/dev/null || true<span style="color:#00f">)</span><span style="color:#a31515">"</span>
+<span style="color:#00f">if</span> [ <span style="color:#a31515">"</span><span style="color:#a31515">${</span>running<span style="color:#a31515">}</span><span style="color:#a31515">"</span> != <span style="color:#a31515">'true'</span> ]; <span style="color:#00f">then</span>
+  docker run <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    -d --restart=always -p <span style="color:#a31515">"</span><span style="color:#a31515">${</span>reg_port<span style="color:#a31515">}</span><span style="color:#a31515">:5000</span><span style="color:#a31515">"</span> --name <span style="color:#a31515">"</span><span style="color:#a31515">${</span>reg_name<span style="color:#a31515">}</span><span style="color:#a31515">"</span> <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>    registry:2
+<span style="color:#00f">fi</span>
+
+<span style="color:#008000"># create a cluster with the local registry enabled in containerd</span>
+cat <span style="color:#a31515">&lt;&lt;EOF | kind create cluster --config=-
+</span><span style="color:#a31515">kind: Cluster
+</span><span style="color:#a31515">apiVersion: kind.x-k8s.io/v1alpha4
+</span><span style="color:#a31515">containerdConfigPatches:
+</span><span style="color:#a31515">- |-
+</span><span style="color:#a31515">  [plugins."io.containerd.grpc.v1.cri".registry.mirrors."localhost:${reg_port}"]
+</span><span style="color:#a31515">    endpoint = ["http://${reg_name}:${reg_port}"]
+</span><span style="color:#a31515">EOF</span>
+
+<span style="color:#008000"># connect the registry to the cluster network</span>
+<span style="color:#008000"># (the network may already be connected)</span>
+docker network connect <span style="color:#a31515">"kind"</span> <span style="color:#a31515">"</span><span style="color:#a31515">${</span>reg_name<span style="color:#a31515">}</span><span style="color:#a31515">"</span> || true
+
+<span style="color:#008000"># Document the local registry</span>
+<span style="color:#008000"># https://github.com/kubernetes/enhancements/tree/master/keps/sig-cluster-lifecycle/generic/1755-communicating-a-local-registry</span>
+cat <span style="color:#a31515">&lt;&lt;EOF | kubectl apply -f -
+</span><span style="color:#a31515">apiVersion: v1
+</span><span style="color:#a31515">kind: ConfigMap
+</span><span style="color:#a31515">metadata:
+</span><span style="color:#a31515">  name: local-registry-hosting
+</span><span style="color:#a31515">  namespace: kube-public
+</span><span style="color:#a31515">data:
+</span><span style="color:#a31515">  localRegistryHosting.v1: |
+</span><span style="color:#a31515">    host: "localhost:${reg_port}"
+</span><span style="color:#a31515">    help: "https://kind.sigs.k8s.io/docs/user/local-registry/"
+</span><span style="color:#a31515">EOF</span></code></pre></div></td>
+    </tr>
+  </tbody>
+  
+</table>
+<h2 id="using-the-registry">Using The Registry<a href="#using-the-registry" class="hanchor" arialabel="Anchor"> 🔗︎</a> </h2>
+<p>The registry can be used like this.</p>
+<ol>
+<li>First we'll pull an image <code>docker pull gcr.io/google-samples/hello-app:1.0</code></li>
+<li>Then we'll tag the image to use the local registry <code>docker tag gcr.io/google-samples/hello-app:1.0 localhost:5000/hello-app:1.0</code></li>
+<li>Then we'll push it to the registry <code>docker push localhost:5000/hello-app:1.0</code></li>
+<li>And now we can use the image <code>kubectl create deployment hello-server --image=localhost:5000/hello-app:1.0</code></li>
+</ol>
+<p>If you build your own image and tag it like <code>localhost:5000/image:foo</code> and then use
+it in kubernetes as <code>localhost:5000/image:foo</code>.</p>
+
+</div>
+<div id="footer" class="footer">
+  <div class="footer-content">
+    <p class="copyright">© 2020 The Kubernetes Authors | Documentation Distributed under <a class="nowrap" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> | <a href="https://github.com/kubernetes-sigs/kind/tree/master/site/static/examples">Examples</a> Distributed under <a class="nowrap" href="https://www.apache.org/licenses/LICENSE-2.0">Apache-2.0</a></p>
+    <p>Last Updated on 2020-12-02 16:45:10 -0800 in <span id="commit"><a href="https://github.com/kubernetes-sigs/kind/commit/95440514d9df65ebd214b1366281ba6eac22d6bf">95440514</a></span></p>
+  </div>
+</div>
+</div>
+
+</body></html>

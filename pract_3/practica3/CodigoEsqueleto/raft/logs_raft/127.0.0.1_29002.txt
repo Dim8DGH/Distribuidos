@@ -1,0 +1,391 @@
+[37m127.0.0.1_29002 -> 10:37:33.600299 raft.go:227: logger initialized[0m
+[36m127.0.0.1_29002 -> 10:37:33.600503 raft.go:273: temporizador de elección iniciado (204ms), término=0[0m
+[37m127.0.0.1_29002 -> 10:37:33.639632 raft.go:652: RequestVote: &{Term:2 CandidateId:0 LastLogIndex:-1 LastLogTerm:-1} [currentTerm=0, votedFor=-1, log index/term=(-1, -1)][0m
+[33m127.0.0.1_29002 -> 10:37:33.639703 raft.go:656: término desactualizado: paso a seguidor[0m
+[37m127.0.0.1_29002 -> 10:37:33.639722 raft.go:371: es ahora SEGUIDOR con término=2; log=[][0m
+[37m127.0.0.1_29002 -> 10:37:33.639745 raft.go:672: RespuestaPeticionVoto: &{Term:2 VoteGranted:true}[0m
+[36m127.0.0.1_29002 -> 10:37:33.639808 raft.go:273: temporizador de elección iniciado (229ms), término=2[0m
+[37m127.0.0.1_29002 -> 10:37:33.640786 raft.go:289: salgo del temporizador porque el término cambió de 0 a 2[0m
+[35m127.0.0.1_29002 -> 10:37:33.641110 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:33.641158 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:33.641185 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:33.691783 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:33.691830 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:33.691845 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:33.742016 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:33.742070 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:33.742084 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:33.791493 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:33.791543 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:33.791560 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:33.841734 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:33.841783 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:33.841809 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:33.892054 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:33.892118 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:33.892137 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:33.941026 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:33.941064 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:33.941078 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:33.991373 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:33.991432 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:33.991449 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.041726 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.041776 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.041792 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.091777 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.091828 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.091845 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.142024 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.142081 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.142152 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.191732 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.191786 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.191832 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.241328 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.241386 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.241402 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.291833 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.291882 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.291899 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.342181 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.342254 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.342269 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.391318 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.391370 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.391385 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.441786 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.441850 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.441877 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.492018 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.492065 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.492139 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.541588 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.541678 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.541698 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.592171 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.592275 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.592293 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.641339 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.641403 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.641424 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.691661 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.691738 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.691760 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.742131 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.742208 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.742259 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.791512 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.791560 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.791574 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.841889 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.841936 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.841951 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.892037 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.892108 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.892130 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.941587 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.941651 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.941677 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:34.991790 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:34.991852 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:34.991872 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.041930 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.041972 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.041984 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.091256 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.091311 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.091325 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.141498 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.141564 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.141597 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.191760 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.191833 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.191847 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.241887 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.241925 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.241938 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.292273 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.292357 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.292374 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.341409 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.341451 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.341470 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.391690 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.391730 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.391741 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.441849 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.441925 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.441960 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.491378 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.491431 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.491448 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.541805 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.541853 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.541886 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.591788 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.591837 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.591849 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.642141 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.642254 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.642274 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.691694 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.691751 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.691771 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.741809 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.741855 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.741880 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.792288 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.792332 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.792345 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.841611 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.841655 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.841667 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.892034 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.892114 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.892137 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.941427 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.941496 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.941527 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:35.991376 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:35.991432 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:35.991461 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.041961 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.042003 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.042017 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.092249 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.092310 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.092330 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.141529 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.141599 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.141622 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.192065 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.192147 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.192172 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.241444 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.241503 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.241527 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.291978 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.292043 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.292076 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.341128 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.341206 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.341222 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.391825 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.391894 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.391912 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.442437 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.442495 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.442512 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.491697 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.491741 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.491756 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.541139 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.541196 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.541222 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.591846 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.591937 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.591950 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.641256 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.641317 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.641343 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.691798 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.691861 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.691880 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.742321 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.742391 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.742421 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.791649 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.791695 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.791721 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.841832 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.841881 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.841896 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.892132 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.892244 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.892262 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.941661 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.941744 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.941765 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:36.991715 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:36.991765 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:36.991781 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.042055 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:37.042123 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:37.042140 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.091492 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:37.091546 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:37.091565 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.141971 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:37.142028 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:37.142045 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.191940 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:37.191983 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:37.191999 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.241379 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:37.241443 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:37.241470 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.291764 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:37.291808 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:37.291820 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.341839 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:37.341889 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:37.341909 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.392154 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:37.392200 raft.go:722: log truncado y actualizado. Nuevo log: [][0m
+[35m127.0.0.1_29002 -> 10:37:37.392232 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.441639 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Term:2 Command:{Operacion:escribir Clave:clave4 Valor:valor4}} {Term:2 Command:{Operacion:escribir Clave:clave1 Valor:valor1}} {Term:2 Command:{Operacion:escribir Clave:clave2 Valor:valor2}} {Term:2 Command:{Operacion:escribir Clave:clave0 Valor:valor0}} {Term:2 Command:{Operacion:escribir Clave:clave3 Valor:valor3}}] LeaderCommit:-1}[0m
+[37m127.0.0.1_29002 -> 10:37:37.441788 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:37.441837 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.492073 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:37.492131 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[37m127.0.0.1_29002 -> 10:37:37.492156 raft.go:727: actualizando commitIndex a 4[0m
+[35m127.0.0.1_29002 -> 10:37:37.492177 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[32m127.0.0.1_29002 -> 10:37:37.492194 raft.go:523: aplicando entradas=[{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}], último aplicado previo=-1[0m
+[35m127.0.0.1_29002 -> 10:37:37.542049 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:37.542102 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:37.542129 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.592186 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:37.592254 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:37.592284 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.641554 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:37.641613 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:37.641658 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.691939 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:37.691998 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:37.692030 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.741494 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:37.741559 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:37.741623 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.792052 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:37.792140 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:37.792187 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.841377 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:37.841438 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:37.841464 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.891884 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:37.891953 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:37.892023 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.941962 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:37.942004 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:37.942056 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:37.991457 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:37.991521 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:37.991562 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.041946 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.041986 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.042008 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.091365 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.091429 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.091460 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.141834 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.141892 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.141917 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.192138 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.192173 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.192224 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.241208 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.241293 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.241350 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.291397 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.291457 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.291487 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.341683 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.341749 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.341789 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.392111 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.392202 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.392238 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.441606 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.441672 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.441730 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.491975 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.492038 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.492085 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.541350 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.541410 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.541448 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.591886 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.591932 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.591972 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.642033 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.642074 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.642132 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.692224 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.692267 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.692308 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.741388 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.741454 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.741510 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.792027 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.792127 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.792178 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.842492 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.842577 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.842608 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.891827 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.891890 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.891923 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.941884 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:38.941924 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:38.941946 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:38.992124 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.000594 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.000652 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.041920 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.041964 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.041992 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.091996 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.092042 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.092065 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.141331 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.141389 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.141431 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.191728 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.191787 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.191827 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.242026 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.242078 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.242135 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.291585 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.291645 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.291686 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.341779 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.341834 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.341865 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.391880 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.391939 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.392024 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.442298 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.442378 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.442424 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.491499 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.491553 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.491581 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.542124 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.542255 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.542288 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.591493 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.591549 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.591580 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.641817 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.641890 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.641935 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.692020 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.692069 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.692141 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.741220 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.741280 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.741317 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.791517 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.791585 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.791623 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.841920 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.842038 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.842079 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[35m127.0.0.1_29002 -> 10:37:39.891978 raft.go:699: AppendEntries recibido: &{Term:2 LeaderId:0 PrevLogIndex:4 PrevLogTerm:2 Entries:[] LeaderCommit:4}[0m
+[37m127.0.0.1_29002 -> 10:37:39.892066 raft.go:722: log truncado y actualizado. Nuevo log: [{2 {escribir clave4 valor4}} {2 {escribir clave1 valor1}} {2 {escribir clave2 valor2}} {2 {escribir clave0 valor0}} {2 {escribir clave3 valor3}}][0m
+[35m127.0.0.1_29002 -> 10:37:39.892136 raft.go:734: Respuesta AppendEntries: {Term:2 Success:true}[0m
+[31m127.0.0.1_29002 -> 10:37:39.924634 raft.go:544: es ahora MUERTO[0m
+[37m127.0.0.1_29002 -> 10:37:39.924705 raft.go:532: aplicador de commits finaliza[0m
+[37m127.0.0.1_29002 -> 10:37:39.930043 raft.go:283: salgo del temporizador porque el estado es Dead[0m
