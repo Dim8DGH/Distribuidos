@@ -111,7 +111,7 @@ func findLeader(nodes []rpctimeout.HostPort) (rpctimeout.HostPort, error) {
 		err := node.CallTimeout("NodoRaft.ObtenerEstadoNodo", raft.Vacio{}, &reply, 5*time.Second)
 
 		if err == nil && reply.EsLider {
-			// BUG CORREGIDO: Devolver el nodo que es el líder, no buscarlo en os.Args
+			//Devolver el nodo que es el líder
 			return node, nil
 		}
 	}
